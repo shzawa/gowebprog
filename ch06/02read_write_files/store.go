@@ -28,7 +28,8 @@ func main() {
 	file2, _ := os.Open("data2")
 	defer file2.Close()
 
-	read2 := make([]byte, len(data))
+	// read2 := make([]byte, len(data))
+	read2 := make([]byte, 16)
 	bytes, _ = file2.Read(read2)
 	fmt.Printf("Read %d bytes from file\n", bytes)
 	fmt.Println(string(read2))
