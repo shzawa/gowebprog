@@ -51,10 +51,8 @@ func main() {
 	fmt.Println(post.Author.Id)
 	fmt.Println(post.Author.Name)
 	fmt.Println(post.Comments)
-	fmt.Println(post.Comments[0].Id)
-	fmt.Println(post.Comments[0].Content)
-	fmt.Println(post.Comments[0].Author)
-	fmt.Println(post.Comments[1].Id)
-	fmt.Println(post.Comments[1].Content)
-	fmt.Println(post.Comments[1].Author)
+
+	for _, comment := range post.Comments {
+		fmt.Println(comment)
+	}
 }
