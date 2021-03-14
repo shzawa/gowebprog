@@ -7,6 +7,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
 )
@@ -14,7 +15,7 @@ import (
 type Post struct {
 	Id         int
 	Content    string
-	AuthorName string `db: author`
+	AuthorName string `db:"author"` // ダブルクォーテーションが抜けてたり、:と"の間に空白が入っていてもダメ!
 }
 
 var Db *sqlx.DB
@@ -48,4 +49,9 @@ func main() {
 	post := Post{Content: "Hello World!", AuthorName: "Sau Sheong"}
 	post.Create()
 	fmt.Println(post) // {1 Hello World! Sau Sheong}}
+	readPost, err := GetPost(post.Id)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(readPost) // {1 Hello World}
 }
