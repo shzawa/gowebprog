@@ -2,7 +2,7 @@
 /*
 
 ＜まずPostgreSQLを起動＞
-$ psql -f install.sql 
+$ psql -f install.sql
 $ psql -f setup.sql
 $ go build
 $ ./14web_service &
