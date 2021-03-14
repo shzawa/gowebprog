@@ -21,3 +21,5 @@ func main() {
 	http.HandleFunc("/body", body)
 	server.ListenAndServe()
 }
+
+// curl -id "first_name=taro&last_name=hoge" localhost:8080/body
