@@ -22,10 +22,10 @@ func main() {
 	defer csvFile.Close()
 
 	allPosts := []Post{
-		Post{Id: 1, Content: "Hello World!", Author: "Sau Sheong"},
-		Post{Id: 2, Content: "Bonjour Monde!", Author: "Pierre"},
-		Post{Id: 3, Content: "Hola Mundo!", Author: "Pedro"},
-		Post{Id: 4, Content: "Greetings Earthlings!", Author: "Sau Sheong"},
+		{Id: 1, Content: "Hello World!", Author: "Sau Sheong"},
+		{Id: 2, Content: "Bonjour Monde!", Author: "Pierre"},
+		{Id: 3, Content: "Hola Mundo!", Author: "Pedro"},
+		{Id: 4, Content: "Greetings Earthlings!", Author: "Sau Sheong"},
 	}
 
 	writer := csv.NewWriter(csvFile)
