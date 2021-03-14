@@ -15,6 +15,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+
 	_ "github.com/lib/pq"
 )
 
@@ -94,30 +95,31 @@ func main() {
 	post := Post{Content: "Hello World!", Author: "Sau Sheong"}
 
 	// Create a post
-	fmt.Println(post) // {0 Hello World! Sau Sheong}
+	fmt.Println("Post{}", post) // {0 Hello World! Sau Sheong}
 	post.Create()
-	fmt.Println(post) // {1 Hello World! Sau Sheong}
+	fmt.Println("Create()", post) // {1 Hello World! Sau Sheong}
 
 	// Get one post
 	readPost, _ := GetPost(post.Id)
-	fmt.Println(readPost) // {1 Hello World! Sau Sheong}
+	fmt.Println("GetPost(post.Id)", readPost) // {1 Hello World! Sau Sheong}
 
 	// Update the post
 	readPost.Content = "Bonjour Monde!"
 	readPost.Author = "Pierre"
 	readPost.Update()
+	fmt.Println("Update()", readPost)
 
 	// Get all posts
 	posts, _ := Posts(10)
-	fmt.Println(posts) // [{1 Bonjour Monde! Pierre}]
+	fmt.Println("Posts(10)", posts) // [{1 Bonjour Monde! Pierre}]
 
 	// Delete the post
 	readPost.Delete()
 
 	// Get all posts
 	posts, _ = Posts(10)
-	fmt.Println(posts) // []
+	fmt.Println("Delete()", posts) // []
 
 	// Delete all posts
-  // DeleteAll()
+	// DeleteAll()
 }
