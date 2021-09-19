@@ -1,8 +1,6 @@
 package main
 
-import (
-	"testing"
-)
+import "testing"
 
 func BenchmarkDecode(b *testing.B) {
 	for i := 0; i < b.N; i++ {
@@ -15,3 +13,6 @@ func BenchmarkUnmarshal(b *testing.B) {
 		unmarshal("post.json")
 	}
 }
+
+// $ gotest -v -cover -short -bench .
+// $ gotest -run x -bench .

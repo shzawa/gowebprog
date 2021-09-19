@@ -6,14 +6,14 @@
     "name" : "Sau Sheong"
   },
   "comments" : [
-    { 
-      "id" : 3, 
-      "content" : "Have a great day!", 
+    {
+      "id" : 3,
+      "content" : "Have a great day!",
       "author" : "Adam"
     },
     {
-      "id" : 4, 
-      "content" : "How are you today?", 
+      "id" : 4,
+      "content" : "How are you today?",
       "author" : "Betty"
     }
   ]

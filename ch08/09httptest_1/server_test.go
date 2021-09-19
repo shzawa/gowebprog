@@ -9,13 +9,22 @@ import (
 )
 
 func TestHandleGet(t *testing.T) {
+	// マルチプレクサを生成
 	mux := http.NewServeMux()
+
+	// テスト対象のハンドラhendleRequestをマルチプレクサに付与
 	mux.HandleFunc("/post/", handleRequest)
 
+	// レコーダを生成
 	writer := httptest.NewRecorder()
+
+	// リクエストを作成
 	request, _ := http.NewRequest("GET", "/post/1", nil)
+
+	// テスト対象のハンドラにリクエストを送信し、レコーダに記録
 	mux.ServeHTTP(writer, request)
 
+	// レコーダにより結果をチェック
 	if writer.Code != 200 {
 		t.Errorf("Response code is %v", writer.Code)
 	}

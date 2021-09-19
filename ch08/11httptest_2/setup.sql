@@ -1,3 +1,6 @@
+-- psql -U gwp -f setup.sql -d gwp
+-- postgres -D /usr/local/var/postgres
+
 drop table posts;
 
 create table posts (
